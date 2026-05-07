@@ -3,6 +3,9 @@ import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
 import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
 import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
 import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
+import { SectionHeader } from "@/components/SectionHeader";
+import grainImage from "@/assets/images/grain.jpg";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -39,15 +42,34 @@ const testimonials = [
 
 export const TestimonialsSection = () => {
   return (
-    <div>
-      <p>Happy Clients</p>
-      <h2>what Clients Say about ME</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p>
+    <div className="py-16">
+      <div className="container">
+        <SectionHeader
+          title="what Clients Say about ME"
+          eyebrow="Happy Clients"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat."
+        />
+        <div>
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.name}
+              className="bg-[#1D1836] rounded-3xl p-6 relative overflow-hidden"
+            >
+              <div
+                className="absolute inset-0 opacity-5 -z-10"
+                style={{ backgroundImage: `url(${grainImage.src})` }}
+              ></div>
+              <Image src={testimonial.avatar} alt={testimonial.name} />
+              <div>{testimonial.name}</div>
+              <div>{testimonial.position}</div>
+              <div>{testimonial.text}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

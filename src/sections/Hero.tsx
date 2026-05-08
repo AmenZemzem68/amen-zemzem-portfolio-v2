@@ -1,8 +1,8 @@
-import memojiImage from "@/assets/images/memoji-computer.png";
+import memojiImage from "@/assets/images/my-avatar.png";
 import Image from "next/image";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";
-import StraIcon from "@/assets/icons/star.svg";
+import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 
@@ -18,42 +18,104 @@ export const HeroSection = () => {
         <div className="size-[820px] hero-ring"></div>
         <div className="size-[1020px] hero-ring"></div>
         <div className="size-[1220px] hero-ring"></div>
-        <HeroOrbit size={800} rotation={-72}>
-          <StraIcon className="size-28 text-[#49b79e]" />
-        </HeroOrbit>
-        <HeroOrbit size={550} rotation={20}>
-          <StraIcon className="size-12 text-[#49b79e]" />
-        </HeroOrbit>
-        <HeroOrbit size={590} rotation={98}>
-          <StraIcon className="size-8 text-[#49b79e]" />
-        </HeroOrbit>
-        <HeroOrbit size={430} rotation={-14}>
+        <HeroOrbit
+          size={430}
+          rotation={-14}
+          shouldOrbit
+          orbitDuration="30s"
+          shoudlSpin
+          spinDuration="3s"
+        >
           <SparkleIcon className="size-8 text-[#49b79e]/20" />
         </HeroOrbit>
-        <HeroOrbit size={440} rotation={79}>
+        <HeroOrbit
+          size={440}
+          rotation={79}
+          shouldOrbit
+          orbitDuration="32s"
+          shoudlSpin
+          spinDuration="3s"
+        >
           <SparkleIcon className="size-5 text-[#49b79e]/20" />
         </HeroOrbit>
-        <HeroOrbit size={530} rotation={178}>
+        <HeroOrbit
+          size={520}
+          rotation={-41}
+          shouldOrbit
+          orbitDuration="34s"
+          shoudlSpin
+          spinDuration="3s"
+        >
+          <div className="size-2 rounded-full bg-[#49b79e]/20" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={530}
+          rotation={178}
+          shouldOrbit
+          orbitDuration="36s"
+          shoudlSpin
+          spinDuration="3s"
+        >
           <SparkleIcon className="size-10 text-[#49b79e]/20" />
         </HeroOrbit>
-        <HeroOrbit size={710} rotation={144}>
+        <HeroOrbit
+          size={550}
+          rotation={20}
+          shouldOrbit
+          orbitDuration="38s"
+          shoudlSpin
+          spinDuration="6s"
+        >
+          <StarIcon className="size-12 text-[#49b79e]" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={590}
+          rotation={98}
+          shouldOrbit
+          orbitDuration="40s"
+          shoudlSpin
+          spinDuration="6s"
+        >
+          <StarIcon className="size-8 text-[#49b79e]" />
+        </HeroOrbit>
+        <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
+          <div className="size-2 rounded-full bg-[#49b79e]/20" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={710}
+          rotation={144}
+          shouldOrbit
+          orbitDuration="44s"
+          shoudlSpin
+          spinDuration="3s"
+        >
           <SparkleIcon className="size-14 text-[#49b79e]/20" />
         </HeroOrbit>
-        <HeroOrbit size={720} rotation={85}>
+        <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
           <div className="size-3 rounded-full bg-[#49b79e]/20" />
         </HeroOrbit>
-        <HeroOrbit size={520} rotation={-41}>
-          <div className="size-2 rounded-full bg-[#49b79e]/20" />
-        </HeroOrbit>
-        <HeroOrbit size={650} rotation={-5}>
-          <div className="size-2 rounded-full bg-[#49b79e]/20" />
+        <HeroOrbit
+          size={800}
+          rotation={-72}
+          shouldOrbit
+          orbitDuration="48s"
+          shoudlSpin
+          spinDuration="6s"
+        >
+          <StarIcon className="size-28 text-[#49b79e]" />
         </HeroOrbit>
       </div>
       <div className="container">
         <div className="flex flex-col items-center">
-          <Image src={memojiImage} className="size-[100px]" alt="My avatar" />
+          <Image
+            src={memojiImage}
+            className="size-[200px] rounded-full mb-2"
+            alt="My avatar"
+          />
           <div className="bg-[#050816] border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
-            <div className="bg-green-500 size-2.5 rounded-full"></div>
+            <div className="bg-green-500 size-2.5 rounded-full relative">
+              <div className="bg-green-500 absolute inset-0 rounded-full animate-ping-large"></div>
+            </div>
             <div className="text-sm font-semibold">
               Available for new projects
             </div>

@@ -1,13 +1,16 @@
+"use client";
+
 import memojiAvatar1 from "@/assets/images/memoji-avatar-1.png";
 import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
 import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
 import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
 import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
 import { SectionHeader } from "@/components/SectionHeader";
-import grainImage from "@/assets/images/grain.jpg";
 import Image from "next/image";
 import { Card } from "@/components/Card";
 import { Fragment } from "react";
+import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 
 const testimonials = [
   {
@@ -42,49 +45,87 @@ const testimonials = [
   },
 ];
 
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 32,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
 export const TestimonialsSection = () => {
   return (
-    <div className="py-16 lg:py-24">
+    <section className="py-16 lg:py-24">
       <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8">
-        <SectionHeader
-          title="what Clients Say about ME"
-          eyebrow="Happy Clients"
-          description="Discover the experiences and feedback from those who have worked with me. Their words reflect the trust and satisfaction i strive to achieve every day."
-        />
-        <div className="mt-12 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 -my-4">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <SectionHeader
+            title="What Clients Say About Me"
+            eyebrow="Happy Clients"
+            description="Discover the experiences and feedback from those who have worked with me. Their words reflect the trust and satisfaction I strive to achieve every day."
+          />
+        </motion.div>
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-120px" }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+          className="mt-12 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 -my-4"
+        >
           <div className="flex gap-8 pr-8 flex-none animate-move-left [animation-duration:60s] hover:[animation-play-state:paused]">
             {[...new Array(2)].fill(0).map((_, idx) => (
               <Fragment key={idx}>
                 {testimonials.map((testimonial) => (
-                  <Card
-                    key={testimonial.name}
-                    className="max-w-xs md:max-w-md p-6 md:p-8 hover:-rotate-3 transition duration-300"
+                  <Tilt
+                    key={`${testimonial.name}-${idx}`}
+                    tiltMaxAngleX={6}
+                    tiltMaxAngleY={6}
+                    scale={1.02}
+                    transitionSpeed={900}
+                    glareEnable={false}
+                    className="max-w-xs md:max-w-md flex-none"
                   >
-                    <div className="flex gap-4 items-center">
-                      <div className="size-14 bg-gray-700 inline-flex rounded-full flex-shrink-0">
-                        <Image
-                          src={testimonial.avatar}
-                          alt={testimonial.name}
-                          className="max-h-full"
-                        />
-                      </div>
-                      <div>
-                        <div className="font-semibold">{testimonial.name}</div>
-                        <div className="text-sm text-white/40">
-                          {testimonial.position}
+                    <Card className="p-6 md:p-8 h-full">
+                      <div className="flex gap-4 items-center">
+                        <div className="size-14 bg-gray-700 inline-flex rounded-full flex-shrink-0 overflow-hidden">
+                          <Image
+                            src={testimonial.avatar}
+                            alt={testimonial.name}
+                            className="max-h-full"
+                          />
+                        </div>
+
+                        <div>
+                          <div className="font-semibold">
+                            {testimonial.name}
+                          </div>
+                          <div className="text-sm text-white/40">
+                            {testimonial.position}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <p className="mt-4 md:mt-6 text-sm md:text-base">
-                      {testimonial.text}
-                    </p>
-                  </Card>
+
+                      <p className="mt-4 md:mt-6 text-sm md:text-base">
+                        {testimonial.text}
+                      </p>
+                    </Card>
+                  </Tilt>
                 ))}
               </Fragment>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };

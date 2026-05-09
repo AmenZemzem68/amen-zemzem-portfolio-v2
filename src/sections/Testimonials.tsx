@@ -88,11 +88,14 @@ export const TestimonialsSection = () => {
                 {testimonials.map((testimonial) => (
                   <Tilt
                     key={`${testimonial.name}-${idx}`}
-                    tiltMaxAngleX={6}
-                    tiltMaxAngleY={6}
+                    tiltMaxAngleX={15}
+                    tiltMaxAngleY={15}
                     scale={1.02}
                     transitionSpeed={900}
-                    glareEnable={false}
+                    glareEnable
+                    glareMaxOpacity={0.12}
+                    glareColor="#ffffff"
+                    glarePosition="all"
                     className="max-w-xs md:max-w-md flex-none"
                   >
                     <Card className="p-6 md:p-8 h-full">

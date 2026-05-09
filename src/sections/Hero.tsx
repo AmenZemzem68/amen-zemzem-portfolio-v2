@@ -31,18 +31,32 @@ const fadeIn = {
 
 export const HeroSection = () => {
   return (
-    <section className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
+    <section className="py-32 md:py-48 lg:py-60 relative isolate z-0 overflow-x-clip">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.4, ease: "easeOut" }}
+        className="absolute -left-32 -top-32 size-[420px] md:size-[600px] lg:size-[760px] rounded-full bg-[#49b79e]/10 blur-3xl -z-20"
+      />
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.4, ease: "easeOut", delay: 0.15 }}
+        className="absolute -bottom-62 -right-32 size-[460px] md:size-[650px] lg:size-[820px] rounded-full bg-[#804DEE]/10 blur-3xl -z-20"
+      />
+
       <motion.div
         variants={fadeIn}
         initial="hidden"
         animate="visible"
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]"
+        className="absolute inset-0 -z-10 pointer-events-none [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
       >
         <div
           className="absolute inset-0 -z-30 opacity-5"
           style={{ backgroundImage: `url(${grainImage.src})` }}
-        ></div>
+        />
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -55,6 +69,45 @@ export const HeroSection = () => {
           <div className="size-[1220px] hero-ring"></div>
         </motion.div>
 
+        {/* Small inner sparkles */}
+        <HeroOrbit
+          size={300}
+          rotation={42}
+          shouldOrbit
+          orbitDuration="24s"
+          shoudlSpin
+          spinDuration="3s"
+        >
+          <SparkleIcon className="size-4 text-[#49b79e]/25" />
+        </HeroOrbit>
+
+        <HeroOrbit
+          size={340}
+          rotation={-92}
+          shouldOrbit
+          orbitDuration="26s"
+          shoudlSpin
+          spinDuration="4s"
+        >
+          <SparkleIcon className="size-5 text-[#804DEE]/30" />
+        </HeroOrbit>
+
+        <HeroOrbit size={380} rotation={132} shouldOrbit orbitDuration="28s">
+          <div className="size-1.5 rounded-full bg-[#49b79e]/30" />
+        </HeroOrbit>
+
+        <HeroOrbit
+          size={410}
+          rotation={-58}
+          shouldOrbit
+          orbitDuration="29s"
+          shoudlSpin
+          spinDuration="4s"
+        >
+          <StarIcon className="size-5 text-[#49b79e]/60" />
+        </HeroOrbit>
+
+        {/* Original medium orbits */}
         <HeroOrbit
           size={430}
           rotation={-14}
@@ -75,6 +128,21 @@ export const HeroSection = () => {
           spinDuration="3s"
         >
           <SparkleIcon className="size-5 text-[#49b79e]/20" />
+        </HeroOrbit>
+
+        <HeroOrbit
+          size={470}
+          rotation={155}
+          shouldOrbit
+          orbitDuration="33s"
+          shoudlSpin
+          spinDuration="5s"
+        >
+          <SparkleIcon className="size-7 text-[#804DEE]/25" />
+        </HeroOrbit>
+
+        <HeroOrbit size={490} rotation={-128} shouldOrbit orbitDuration="35s">
+          <div className="size-2 rounded-full bg-[#804DEE]/25" />
         </HeroOrbit>
 
         <HeroOrbit
@@ -111,6 +179,17 @@ export const HeroSection = () => {
         </HeroOrbit>
 
         <HeroOrbit
+          size={575}
+          rotation={-165}
+          shouldOrbit
+          orbitDuration="39s"
+          shoudlSpin
+          spinDuration="5s"
+        >
+          <SparkleIcon className="size-6 text-[#49b79e]/30" />
+        </HeroOrbit>
+
+        <HeroOrbit
           size={590}
           rotation={98}
           shouldOrbit
@@ -121,8 +200,30 @@ export const HeroSection = () => {
           <StarIcon className="size-8 text-[#49b79e]" />
         </HeroOrbit>
 
+        <HeroOrbit
+          size={620}
+          rotation={64}
+          shouldOrbit
+          orbitDuration="41s"
+          shoudlSpin
+          spinDuration="7s"
+        >
+          <StarIcon className="size-6 text-[#804DEE]/70" />
+        </HeroOrbit>
+
         <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
           <div className="size-2 rounded-full bg-[#49b79e]/20" />
+        </HeroOrbit>
+
+        <HeroOrbit
+          size={680}
+          rotation={-104}
+          shouldOrbit
+          orbitDuration="43s"
+          shoudlSpin
+          spinDuration="4s"
+        >
+          <SparkleIcon className="size-9 text-[#804DEE]/25" />
         </HeroOrbit>
 
         <HeroOrbit
@@ -141,6 +242,17 @@ export const HeroSection = () => {
         </HeroOrbit>
 
         <HeroOrbit
+          size={760}
+          rotation={-36}
+          shouldOrbit
+          orbitDuration="47s"
+          shoudlSpin
+          spinDuration="5s"
+        >
+          <StarIcon className="size-10 text-[#49b79e]/80" />
+        </HeroOrbit>
+
+        <HeroOrbit
           size={800}
           rotation={-72}
           shouldOrbit
@@ -150,9 +262,62 @@ export const HeroSection = () => {
         >
           <StarIcon className="size-28 text-[#49b79e]" />
         </HeroOrbit>
+
+        {/* Outer orbit details */}
+        <HeroOrbit size={840} rotation={118} shouldOrbit orbitDuration="50s">
+          <div className="size-2.5 rounded-full bg-[#804DEE]/30" />
+        </HeroOrbit>
+
+        <HeroOrbit
+          size={880}
+          rotation={-142}
+          shouldOrbit
+          orbitDuration="52s"
+          shoudlSpin
+          spinDuration="6s"
+        >
+          <SparkleIcon className="size-11 text-[#49b79e]/25" />
+        </HeroOrbit>
+
+        <HeroOrbit
+          size={930}
+          rotation={34}
+          shouldOrbit
+          orbitDuration="54s"
+          shoudlSpin
+          spinDuration="8s"
+        >
+          <StarIcon className="size-16 text-[#804DEE]/50" />
+        </HeroOrbit>
+
+        <HeroOrbit size={980} rotation={172} shouldOrbit orbitDuration="56s">
+          <div className="size-3 rounded-full bg-[#49b79e]/25" />
+        </HeroOrbit>
+
+        <HeroOrbit
+          size={1040}
+          rotation={-88}
+          shouldOrbit
+          orbitDuration="58s"
+          shoudlSpin
+          spinDuration="7s"
+        >
+          <SparkleIcon className="size-12 text-[#804DEE]/20" />
+        </HeroOrbit>
+
+        <HeroOrbit
+          size={1120}
+          rotation={56}
+          shouldOrbit
+          orbitDuration="62s"
+          shoudlSpin
+          spinDuration="9s"
+        >
+          <StarIcon className="size-20 text-[#49b79e]/50" />
+        </HeroOrbit>
       </motion.div>
 
-      <div className="container">
+      <div className="container relative z-10">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -179,6 +344,7 @@ export const HeroSection = () => {
             <div className="bg-green-500 size-2.5 rounded-full relative">
               <div className="bg-green-500 absolute inset-0 rounded-full animate-ping-large"></div>
             </div>
+
             <div className="text-sm font-semibold">
               Available for new projects
             </div>

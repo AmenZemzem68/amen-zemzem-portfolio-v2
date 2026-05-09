@@ -79,13 +79,14 @@ type ProjectTag = {
   color: string;
 };
 
-type Project = {
+export type Project = {
   name: string;
   description: string;
   tags: ProjectTag[];
   image: StaticImageData;
-  source_code_link: string;
   type?: string;
+  githubLink?: string;
+  liveLink?: string;
 };
 
 export const mProjects: Project[] = [
@@ -108,7 +109,7 @@ export const mProjects: Project[] = [
       },
     ],
     image: fsa,
-    source_code_link: "https://goldenrod-goshawk-484764.hostingersite.com/",
+    liveLink: "https://goldenrod-goshawk-484764.hostingersite.com/",
   },
   {
     name: "AirTech Oman Website",
@@ -129,7 +130,7 @@ export const mProjects: Project[] = [
       },
     ],
     image: airtech,
-    source_code_link: "https://airtech-oman.com/",
+    liveLink: "https://airtech-oman.com/",
   },
   {
     name: "Bahjat Al Khawir Website",
@@ -150,7 +151,7 @@ export const mProjects: Project[] = [
       },
     ],
     image: bahjat,
-    source_code_link: "https://bahjatalkhawir.com/",
+    liveLink: "https://bahjatalkhawir.com/",
   },
   {
     name: "Royal Flame Landing Page",
@@ -171,7 +172,8 @@ export const mProjects: Project[] = [
       },
     ],
     image: royal,
-    source_code_link: "https://royal-flame.vercel.app/",
+    liveLink: "https://royal-flame.vercel.app/",
+    githubLink: "https://github.com/AmenZemzem68/royal-flame-restaurant",
   },
   {
     name: "Restaurant Application",
@@ -192,7 +194,7 @@ export const mProjects: Project[] = [
       },
     ],
     image: restauApp,
-    source_code_link: "https://github.com/AmenZemzem68/zemzem-amen-l3mdw-2024",
+    githubLink: "https://github.com/AmenZemzem68/zemzem-amen-l3mdw-2024",
   },
   {
     name: "Eram Tecno Website",
@@ -213,11 +215,11 @@ export const mProjects: Project[] = [
       },
     ],
     image: eramtecno,
-    source_code_link: "https://eramtecno.com/",
+    liveLink: "https://eramtecno.com/",
   },
   {
     name: "Training Management App",
-    type: "personal",
+    type: "Personal Project",
     description:
       "A comprehensive & simple web application developed to manage training programs for company personnel, streamlining scheduling & reporting.",
     tags: [
@@ -235,7 +237,7 @@ export const mProjects: Project[] = [
       },
     ],
     image: coding,
-    source_code_link: "https://github.com/AmenZemzem68/training-management-app",
+    githubLink: "https://github.com/AmenZemzem68/training-management-app",
   },
 ];
 export const mDesigns = [

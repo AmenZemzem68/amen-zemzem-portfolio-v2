@@ -10,7 +10,7 @@ export const SectionHeader = ({
   return (
     <>
       <div className="flex justify-center">
-        <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-[#49b79e] to-[#804DEE] text-transparent bg-clip-text text-center">
+        <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-[#49b79e] to-[#804DEE] text-transparent bg-clip-text text-center ">
           {eyebrow}
         </p>
       </div>

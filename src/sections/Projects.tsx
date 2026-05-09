@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
+import GithubIcon from "@/assets/icons/github.svg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import { mProjects } from "@/constants";
@@ -114,28 +115,51 @@ export const ProjectsSection = () => {
                       ))}
                     </motion.div>
 
-                    <motion.a
-                      href={project.source_code_link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variants={fadeUp}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                      className="inline-block"
-                    >
-                      <motion.button
-                        whileHover={{
-                          y: -3,
-                          scale: 1.02,
-                        }}
-                        whileTap={{
-                          scale: 0.97,
-                        }}
-                        className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8"
+                    {(project.liveLink || project.githubLink) && (
+                      <motion.div
+                        variants={fadeUp}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="mt-8 flex flex-col md:flex-row gap-3"
                       >
-                        <span>Visit Live Site</span>
-                        <ArrowUpRight className="size-4" />
-                      </motion.button>
-                    </motion.a>
+                        {project.liveLink && (
+                          <motion.a
+                            href={project.liveLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{
+                              y: -3,
+                              scale: 1.02,
+                            }}
+                            whileTap={{
+                              scale: 0.97,
+                            }}
+                            className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2"
+                          >
+                            <span>Live Site</span>
+                            <ArrowUpRight className="size-4" />
+                          </motion.a>
+                        )}
+
+                        {project.githubLink && (
+                          <motion.a
+                            href={project.githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{
+                              y: -3,
+                              scale: 1.02,
+                            }}
+                            whileTap={{
+                              scale: 0.97,
+                            }}
+                            className="bg-gray-950 text-white h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 border border-white/15"
+                          >
+                            <span>GitHub</span>
+                            <GithubIcon className="size-4" />
+                          </motion.a>
+                        )}
+                      </motion.div>
+                    )}
                   </motion.div>
 
                   <div className="relative">

@@ -2,6 +2,7 @@ import { AboutSection } from "@/sections/About";
 import { ContactSection } from "@/sections/Contact";
 import { ContactForm } from "@/sections/ContactForm";
 import { DesignsSection } from "@/sections/DesignsSection";
+import { ExperienceSection } from "@/sections/ExperienceSection";
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
 import { HeroSection } from "@/sections/Hero";
@@ -15,6 +16,7 @@ export default function Home() {
     <div>
       <Header />
       <HeroSection />
+      <ExperienceSection />
       <ProjectsSection />
       <DesignsSection />
       <TapeSection />

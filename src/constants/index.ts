@@ -1,5 +1,12 @@
 import type { StaticImageData } from "next/image";
 
+import bahjatFeedback from "@/assets/images/bahjat.png";
+import aahhmFeedback from "@/assets/images/aahhm.png";
+import sbFeedback from "@/assets/images/sb.jpg";
+import crtFeedback from "@/assets/images/crt.png";
+import eramFeedback from "@/assets/images/eram.png";
+import chahdFeedback from "@/assets/images/Chahd.png";
+
 import restauApp from "@/assets/images/projects/restauapp.png";
 import bahjat from "@/assets/images/projects/bahjat.png";
 import fsa from "@/assets/images/projects/fsa.png";
@@ -65,6 +72,14 @@ type DesignTag = {
   color: string;
 };
 
+export type Feedback = {
+  id: number;
+  image: StaticImageData;
+  title: string;
+  subtitle: string;
+  comment: string;
+};
+
 export type Design = {
   name: string;
   type: string;
@@ -88,6 +103,135 @@ export type Project = {
   githubLink?: string;
   liveLink?: string;
 };
+
+export type TimelineItem = {
+  id: number;
+  category: "education" | "experience";
+  year: string;
+  title: string;
+  desc: string[];
+};
+
+export const timelineData: TimelineItem[] = [
+  {
+    id: 1,
+    category: "education",
+    year: "2021 - 2024",
+    title: "Bachelor's Degree in Computer Technology",
+    desc: [
+      "Specialized in multimedia and web development with a focus on modern web technologies, gaining hands-on experience in designing and developing dynamic web solutions.",
+    ],
+  },
+  {
+    id: 2,
+    category: "education",
+    year: "2017 - 2021",
+    title: "High School Diploma in Technical Sciences",
+    desc: [
+      "Built a solid foundation in computer science and technical disciplines, fostering analytical and problem-solving skills.",
+    ],
+  },
+  {
+    id: 4,
+    category: "experience",
+    year: "Sep 2024 - Present",
+    title: "Freelancer",
+    desc: [
+      "Designed visually appealing and impactful posters for the A.A.H.H.M Center Workshop Event.",
+      "Designed the logo and visual identity for SansBac, a high-end fragrance brand.",
+      "Developed a modern, user-friendly website for Bahjat Al Khawir United, an Omani construction company.",
+      "Developed a website for Air Tech Services, an Omani central air conditioning services company.",
+    ],
+  },
+  {
+    id: 5,
+    category: "experience",
+    year: "Feb 2024 - May 2024",
+    title: "Intern - All Tech Company",
+    desc: [
+      "Designed and developed an order-taking application for restaurants using Ionic, Angular, Microsoft SQL Server and .NET.",
+    ],
+  },
+  {
+    id: 6,
+    category: "experience",
+    year: "Jan 2024 - Feb 2024",
+    title: "Intern - Khomsa Media",
+    desc: [
+      "Created an e-commerce website for Eram Tecno, an Omani company specializing in home appliances and air conditioning, using WordPress.",
+    ],
+  },
+  {
+    id: 7,
+    category: "experience",
+    year: "Jan 2023 - Feb 2023",
+    title: "Intern - Poulina Group Holding",
+    desc: [
+      "Developed a web application for managing employee training within the company.",
+    ],
+  },
+  {
+    id: 8,
+    category: "experience",
+    year: "Jan 2023 - Feb 2023",
+    title: "Intern - Visteon Bir Elbey",
+    desc: [
+      "Configured access points and switches.",
+      "Participated in server configuration under supervision.",
+    ],
+  },
+];
+
+export const feedbacks: Feedback[] = [
+  {
+    id: 1,
+    image: bahjatFeedback,
+    title: "Abdullah Al Malki",
+    subtitle: "CEO of Bahjat Al Khawir United",
+    comment:
+      "Overall, very pleased with Amen and his friendliness with us. He did everything we asked in a timely manner and maintained a professional yet approachable attitude throughout. I will definitely be recommending him to other companies. Thanks for such good work and dedication to excellence.",
+  },
+  {
+    id: 2,
+    image: aahhmFeedback,
+    title: "Youssef Hamou",
+    subtitle: "A.A.H.H.M Center Manager",
+    comment:
+      "Amen's creativity and attention to detail truly stood out during the design of our workshop posters and badges. The designs were not only visually stunning but also effectively conveyed the theme of our event. We appreciate his professionalism and dedication!",
+  },
+  {
+    id: 3,
+    image: sbFeedback,
+    title: "Oussama Boufaied",
+    subtitle: "SB Brand Founder",
+    comment:
+      "Amen is a highly creative designer with strong visual storytelling skills. Their innovative approach demonstrates a clear passion for design and an ability to think outside the box. With a focus on aligning designs to project goals, their talent will undoubtedly shine in future endeavors.",
+  },
+  {
+    id: 4,
+    image: crtFeedback,
+    title: "Wissal Chammakhi",
+    subtitle: "President of the Red Crescent Club, ISSTE",
+    comment:
+      "Amen’s designs for our logos and posters were outstanding. His work beautifully reflected our mission and values while maintaining a professional and creative touch. We are grateful for their hard work and dedication to our cause. Highly recommended!",
+  },
+  {
+    id: 5,
+    image: eramFeedback,
+    title: "Mahmoud Al Maawali",
+    subtitle: "Chief Executive Officer at Eram Tecno",
+    comment:
+      "Amen developed an e-commerce website for us that was both functional and visually appealing. His expertise in development brought our vision to life, and the website has been a great success. We couldn't be happier with the results and we highly recommend his services.",
+  },
+  {
+    id: 6,
+    image: chahdFeedback,
+    title: "Chahd Soussi",
+    subtitle: "Founder of Chahd Abaya",
+    comment:
+      "Working with Amen on our logo design was an absolute pleasure. He captured the essence of our brand with a clean, elegant, and modern logo that perfectly represents Chahd Abaya. The process was smooth, and his creativity exceeded our expectations.",
+  },
+];
 
 export const mProjects: Project[] = [
   {

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Inter, Calistoga } from "next/font/google";
-import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
+import "react-vertical-timeline-component/style.min.css";
+import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],

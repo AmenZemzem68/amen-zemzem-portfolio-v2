@@ -1,36 +1,36 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
-import { Inter, Calistoga } from "next/font/google";
+import localFont from "next/font/local";
 import "react-toastify/dist/ReactToastify.css";
 import "react-vertical-timeline-component/style.min.css";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: "../assets/fonts/Inter-Variable.woff2",
+  variable: "--font-sans",
   display: "swap",
 });
 
-const calistoga = Calistoga({
-  subsets: ["latin"],
+const calistoga = localFont({
+  src: "../assets/fonts/Calistoga-Regular.woff2",
   variable: "--font-serif",
-  weight: "400",
   display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
   title: "Amen Zemzem | Freelance Web Developer",
-  description: "Created with the ❤️",
+  description: "Created with ❤️",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${calistoga.variable} bg-[#050816] text-white antialiased`}
+        className={`${inter.variable} ${calistoga.variable} bg-[#050816] text-white antialiased`}
       >
         {children}
       </body>

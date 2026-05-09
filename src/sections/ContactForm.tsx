@@ -131,7 +131,10 @@ export const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-16 pt-12 lg:py-24 lg:pt-20">
+    <section
+      id="contact"
+      className="py-16 pt-12 lg:py-24 lg:pt-20 overflow-x-clip"
+    >
       <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8">
         <motion.div
           variants={fadeUp}

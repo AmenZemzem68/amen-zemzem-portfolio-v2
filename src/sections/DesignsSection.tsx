@@ -39,7 +39,7 @@ export const DesignsSection = () => {
   }, [filter]);
 
   return (
-    <section id="designs" className="py-16 lg:py-24">
+    <section id="designs" className="py-16 lg:py-24 overflow-x-clip">
       <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8">
         <motion.div
           variants={fadeUp}

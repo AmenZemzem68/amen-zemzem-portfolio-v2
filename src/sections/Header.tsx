@@ -25,7 +25,7 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-3 left-0 w-full z-50 px-4">
+    <header className="fixed top-3 left-0 w-full z-50 px-4 overflow-x-clip">
       <nav className="mx-auto flex max-w-[900px] items-center justify-between gap-4 rounded-full border border-white/15 bg-white/10 p-1.5 backdrop-blur">
         <a
           href="#"

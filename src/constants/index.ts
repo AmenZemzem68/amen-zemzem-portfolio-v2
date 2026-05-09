@@ -8,7 +8,7 @@ import eramFeedback from "@/assets/images/eram.png";
 import chahdFeedback from "@/assets/images/Chahd.png";
 
 import restauApp from "@/assets/images/projects/restauapp.png";
-import bahjat from "@/assets/images/projects/bahjat.png";
+import bahjat from "@/assets/images/projects/bahjat-01.png";
 import fsa from "@/assets/images/projects/fsa.png";
 import eramtecno from "@/assets/images/projects/eramtecno.jpg";
 import royal from "@/assets/images/projects/royal-flame.png";

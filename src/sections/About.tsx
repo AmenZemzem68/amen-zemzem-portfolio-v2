@@ -220,7 +220,7 @@ export const AboutSection = () => {
   const constrainRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20 lg:py-28 overflow-x-clip">
       <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8">
         <motion.div
           variants={fadeUp}

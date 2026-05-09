@@ -30,7 +30,7 @@ const staggerContainer = {
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="pb-16 lg:py-24">
+    <section id="projects" className="pb-16 lg:py-24 overflow-x-clip">
       <div className="w-full max-w-[1200px] mx-auto px-4 md:px-8">
         <motion.div
           initial="hidden"

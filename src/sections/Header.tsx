@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import logo from "@/assets/images/logo-01.png";
 
 const navLinks = [
   {
@@ -23,7 +25,6 @@ const navLinks = [
     label: "Testimonials",
     href: "#feedbacks",
   },
-
   {
     label: "About",
     href: "#about",
@@ -36,20 +37,90 @@ const navLinks = [
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("#");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 140;
+
+      if (window.scrollY < 120) {
+        setActiveLink("#");
+        return;
+      }
+
+      const sectionLinks = navLinks.filter((link) => link.href !== "#");
+
+      for (const link of sectionLinks) {
+        const section = document.querySelector(link.href) as HTMLElement | null;
+
+        if (!section) continue;
+
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          setActiveLink(link.href);
+          break;
+        }
+      }
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleNavClick = (href: string) => {
+    setActiveLink(href);
+    setIsOpen(false);
+  };
+
+  const navItemClassName = (href: string) =>
+    `px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+      activeLink === href
+        ? "bg-white text-gray-900 shadow-sm"
+        : "text-white/70 hover:text-white hover:bg-white/10"
+    }`;
 
   return (
     <header className="fixed top-3 left-0 w-full z-50 px-4 overflow-x-clip">
       <nav className="mx-auto flex max-w-[900px] items-center justify-between gap-4 rounded-full border border-white/15 bg-white/10 p-1.5 backdrop-blur">
         <a
           href="#"
-          className="pl-4 pr-2 text-sm font-semibold text-white/90 whitespace-nowrap"
+          onClick={() => handleNavClick("#")}
+          className="group flex items-center overflow-hidden rounded-full bg-[#080C14] p-1 pr-1 shadow-lg shadow-black/20 ring-1 ring-white/10 transition-all duration-500 hover:pr-4 hover:ring-[#49b79e]/50"
+          aria-label="Go to home"
         >
-          Amen Zemzem
+          <span className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#080C14]">
+            <Image
+              src={logo}
+              alt="Amen logo"
+              width={40}
+              height={40}
+              className="size-10 rounded-full object-cover"
+              priority
+            />
+          </span>
+
+          <span className="max-w-0 overflow-hidden whitespace-nowrap pl-0 text-sm font-bold uppercase tracking-[0.2em] text-[#49b79e] opacity-0 transition-all duration-500 ease-out group-hover:max-w-[90px] group-hover:pl-1 group-hover:opacity-100">
+            Amen
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="nav-item">
+            <a
+              key={link.label}
+              href={link.href}
+              onClick={() => handleNavClick(link.href)}
+              className={navItemClassName(link.href)}
+            >
               {link.label}
             </a>
           ))}
@@ -58,9 +129,14 @@ export const Header = () => {
         <div className="flex items-center gap-2">
           <a
             href="#contact"
-            className="hidden md:inline-flex h-9 items-center rounded-full bg-white px-4 text-sm font-semibold text-gray-900 transition hover:bg-white/90"
+            onClick={() => handleNavClick("#contact")}
+            className={`hidden md:inline-flex h-12 items-center rounded-full px-4 text-sm font-semibold transition-all duration-300 ${
+              activeLink === "#contact"
+                ? "bg-white text-gray-900 shadow-sm"
+                : "bg-white text-gray-900 hover:bg-white/90"
+            }`}
           >
-            Let&apos;s Talk
+            👋 Let&apos;s Talk
           </a>
 
           <button
@@ -115,8 +191,8 @@ export const Header = () => {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="nav-item text-center"
+                onClick={() => handleNavClick(link.href)}
+                className={`${navItemClassName(link.href)} text-center`}
               >
                 {link.label}
               </a>
@@ -124,8 +200,12 @@ export const Header = () => {
 
             <a
               href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="mt-2 inline-flex h-10 items-center justify-center rounded-full bg-white px-4 text-sm font-semibold text-gray-900 transition hover:bg-white/90"
+              onClick={() => handleNavClick("#contact")}
+              className={`mt-2 inline-flex h-10 items-center justify-center rounded-full px-4 text-sm font-semibold transition-all duration-300 ${
+                activeLink === "#contact"
+                  ? "bg-white text-gray-900 shadow-sm"
+                  : "bg-white text-gray-900 hover:bg-white/90"
+              }`}
             >
               Let&apos;s Talk
             </a>

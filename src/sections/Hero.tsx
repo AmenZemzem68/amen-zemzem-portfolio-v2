@@ -69,7 +69,6 @@ export const HeroSection = () => {
           <div className="size-[1220px] hero-ring"></div>
         </motion.div>
 
-        {/* Small inner sparkles */}
         <HeroOrbit
           size={300}
           rotation={42}
@@ -107,7 +106,6 @@ export const HeroSection = () => {
           <StarIcon className="size-5 text-[#49b79e]/60" />
         </HeroOrbit>
 
-        {/* Original medium orbits */}
         <HeroOrbit
           size={430}
           rotation={-14}
@@ -263,7 +261,6 @@ export const HeroSection = () => {
           <StarIcon className="size-28 text-[#49b79e]" />
         </HeroOrbit>
 
-        {/* Outer orbit details */}
         <HeroOrbit size={840} rotation={118} shouldOrbit orbitDuration="50s">
           <div className="size-2.5 rounded-full bg-[#804DEE]/30" />
         </HeroOrbit>
@@ -383,19 +380,31 @@ export const HeroSection = () => {
           <motion.button
             variants={fadeUp}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl"
+            className="group relative isolate inline-flex h-12 items-center gap-2 overflow-hidden rounded-xl border border-white/15 px-6 transition-all duration-300 hover:border-[#49b79e]/70 hover:shadow-lg hover:shadow-[#49b79e]/20"
           >
-            <span className="font-semibold">Explore My Work</span>
-            <ArrowDown className="size-4" />
+            <span className="absolute inset-0 -z-10 -translate-x-full bg-gradient-to-r from-[#49b79e] to-[#804DEE] transition-transform duration-500 ease-out group-hover:translate-x-0" />
+
+            <span className="font-semibold text-white transition-colors duration-300">
+              Explore My Work
+            </span>
+
+            <ArrowDown className="size-4 text-white transition-transform duration-300 group-hover:translate-y-0.5" />
           </motion.button>
 
           <motion.button
             variants={fadeUp}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl"
+            className="group relative isolate inline-flex h-12 items-center gap-2 overflow-hidden rounded-xl border border-white bg-white px-6 text-gray-900 transition-all duration-300 hover:border-[#804DEE]/70 hover:shadow-lg hover:shadow-[#804DEE]/20"
           >
-            <span>👋</span>
-            <span className="font-semibold">Let&apos;s Connect</span>
+            <span className="absolute inset-0 -z-10 origin-left scale-x-0 bg-gradient-to-r from-[#804DEE] to-[#49b79e] transition-transform duration-500 ease-out group-hover:scale-x-100" />
+
+            <span className="relative z-10 transition-transform duration-300 group-hover:rotate-12">
+              👋
+            </span>
+
+            <span className="relative z-10 font-semibold transition-colors duration-300 group-hover:text-white">
+              Let&apos;s Connect
+            </span>
           </motion.button>
         </motion.div>
       </div>

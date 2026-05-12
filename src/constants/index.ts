@@ -299,6 +299,7 @@ export const mProjects: Project[] = [
   },
   {
     name: "Royal Flame Landing Page",
+    type: "Personal Project",
     description:
       "A restaurant landing page that features an elegant design for browsing menus & booking tables. It incorporates 3D models to enhance the user experience.",
     tags: [

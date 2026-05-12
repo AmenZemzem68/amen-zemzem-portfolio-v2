@@ -5,7 +5,6 @@ import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
 import { Card } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
 import { motion } from "framer-motion";
@@ -22,17 +21,17 @@ const socialLinks = [
   {
     name: "Facebook",
     icon: FaFacebookF,
-    href: "#",
+    href: "https://www.facebook.com/zemzem.amen.3",
   },
   {
     name: "Instagram",
     icon: FaInstagram,
-    href: "#",
+    href: "https://www.instagram.com/amen_zemzem/",
   },
   {
     name: "Behance",
     icon: FaBehance,
-    href: "#",
+    href: "https://www.behance.net/amenzemzem",
   },
   {
     name: "GitHub",
@@ -42,12 +41,12 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: FaLinkedinIn,
-    href: "#",
+    href: "https://www.linkedin.com/in/amenzemzem/",
   },
   {
     name: "Discord",
     icon: FaDiscord,
-    href: "#",
+    href: "https://discord.com/users/1086722695305113791",
   },
 ];
 
@@ -92,8 +91,20 @@ export const ContactForm = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    if (loading) return;
+
     if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
       toast.error("Email service is not configured yet.");
+      return;
+    }
+
+    if (
+      !form.name.trim() ||
+      !form.email.trim() ||
+      !form.subject.trim() ||
+      !form.message.trim()
+    ) {
+      toast.error("Please fill in all fields.");
       return;
     }
 
@@ -104,14 +115,16 @@ export const ContactForm = () => {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
+          from_name: form.name.trim(),
           to_name: "Amen Zemzem",
-          from_email: form.email,
+          from_email: form.email.trim(),
           to_email: "zemzemamen68@gmail.com",
-          subject: form.subject,
-          message: form.message,
+          subject: form.subject.trim(),
+          message: form.message.trim(),
         },
-        EMAILJS_PUBLIC_KEY,
+        {
+          publicKey: EMAILJS_PUBLIC_KEY,
+        },
       );
 
       toast.success("Thank you. I will get back to you as soon as possible.");
@@ -123,8 +136,8 @@ export const ContactForm = () => {
         message: "",
       });
     } catch (error) {
-      console.error(error);
-      toast.error("Ahh, something went wrong. Please try again.");
+      console.error("EmailJS error:", error);
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -187,12 +200,14 @@ export const ContactForm = () => {
 
             <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
               <p className="text-sm text-white/40">Don&apos;t like forms?</p>
+
               <a
                 href="mailto:zemzemamen68@gmail.com"
                 className="mt-1 inline-flex text-sm md:text-base font-semibold text-white hover:text-[#49b79e] transition"
               >
                 zemzemamen68@gmail.com
               </a>
+
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
@@ -278,17 +293,15 @@ export const ContactForm = () => {
                   <motion.button
                     type="submit"
                     disabled={loading}
-                    whileHover={{
-                      y: loading ? 0 : -3,
-                      scale: loading ? 1 : 1.02,
-                    }}
-                    whileTap={{
-                      scale: loading ? 1 : 0.97,
-                    }}
-                    className="inline-flex h-12 w-full md:w-max items-center justify-center gap-2 rounded-xl bg-white px-6 font-semibold text-gray-950 transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="group relative isolate inline-flex h-12 w-full items-center justify-center gap-2 overflow-hidden rounded-xl border border-white bg-white px-6 font-semibold text-gray-950 transition-all duration-300 hover:border-[#49b79e]/70 hover:shadow-lg hover:shadow-[#49b79e]/20 disabled:cursor-not-allowed disabled:opacity-60 md:w-max"
                   >
-                    <span>{loading ? "Sending..." : "Send Message"}</span>
-                    <ArrowUpRightIcon className="size-4" />
+                    <span className="absolute inset-0 -z-10 origin-left scale-x-0 bg-gradient-to-r from-[#49b79e] to-[#804DEE] transition-transform duration-500 ease-out group-hover:scale-x-100 group-disabled:scale-x-0" />
+
+                    <span className="relative z-10 transition-colors duration-300 group-hover:text-white group-disabled:text-gray-950">
+                      {loading ? "Sending..." : "Send Message"}
+                    </span>
+
+                    <ArrowUpRightIcon className="relative z-10 size-4 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white group-disabled:translate-x-0 group-disabled:translate-y-0 group-disabled:text-gray-950" />
                   </motion.button>
                 </div>
               </form>
@@ -298,7 +311,7 @@ export const ContactForm = () => {
       </div>
 
       <ToastContainer
-        position="bottom-right"
+        position="top-right"
         theme="dark"
         autoClose={3000}
         hideProgressBar={false}

@@ -63,10 +63,10 @@ export const ContactSection = () => {
               </h2>
 
               <p className="text-sm md:text-base mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Have a project in mind, a website to build, or a design that
+                needs to come alive? I can help you create a modern, responsive,
+                and polished digital experience that looks great, works
+                smoothly, and reflects your vision.
               </p>
             </motion.div>
 
@@ -86,10 +86,16 @@ export const ContactSection = () => {
                 delay: 0.3,
               }}
             >
-              <motion.button className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900">
+              <motion.a
+                href="https://www.linkedin.com/in/amenzemzem/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900"
+              >
                 <span className="font-semibold">Contact Me</span>
-                <ArrowUpRightIcon className="size-4" />
-              </motion.button>
+
+                <ArrowUpRightIcon className="size-4 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </motion.a>
             </motion.div>
           </div>
         </motion.div>

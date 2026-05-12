@@ -4,11 +4,6 @@ import { Card } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
 import bookImage from "@/assets/images/book-cover.png";
 import Image from "next/image";
-import JavaScriptIcon from "@/assets/icons/square-js.svg";
-import HTMLIcon from "@/assets/icons/html5.svg";
-import ReactIcon from "@/assets/icons/react.svg";
-import CSSIcon from "@/assets/icons/css3.svg";
-import GithubIcon from "@/assets/icons/github.svg";
 import mapImage from "@/assets/images/map.png";
 import smileMimoji from "@/assets/images/my-avatar.png";
 import { CardHeader } from "@/components/CardHeader";
@@ -16,26 +11,81 @@ import { ToolBoxItems } from "@/components/ToolBoxItems";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
-const toolboxItems = [
-  {
-    title: "JavaScript",
-    iconType: JavaScriptIcon,
-  },
+import {
+  SiHtml5,
+  SiCss,
+  SiPhp,
+  SiJavascript,
+  SiReact,
+  SiTailwindcss,
+  SiBootstrap,
+  SiMysql,
+  SiSharp,
+  SiDotnet,
+  SiWordpress,
+  SiBlender,
+} from "react-icons/si";
+import { TbBrandAdobeIllustrator, TbBrandAdobePhotoshop } from "react-icons/tb";
+
+const toolboxItemsLeft = [
   {
     title: "HTML5",
-    iconType: HTMLIcon,
+    iconType: SiHtml5,
   },
   {
     title: "CSS3",
-    iconType: CSSIcon,
+    iconType: SiCss,
   },
   {
-    title: "ReactJS",
-    iconType: ReactIcon,
+    title: "JavaScript",
+    iconType: SiJavascript,
   },
   {
-    title: "Github",
-    iconType: GithubIcon,
+    title: "React",
+    iconType: SiReact,
+  },
+  {
+    title: "Tailwind CSS",
+    iconType: SiTailwindcss,
+  },
+  {
+    title: "Bootstrap",
+    iconType: SiBootstrap,
+  },
+  {
+    title: "PHP",
+    iconType: SiPhp,
+  },
+];
+
+const toolboxItemsRight = [
+  {
+    title: "SQL Database",
+    iconType: SiMysql,
+  },
+  {
+    title: "C#",
+    iconType: SiSharp,
+  },
+  {
+    title: ".NET",
+    iconType: SiDotnet,
+  },
+  {
+    title: "WordPress",
+    iconType: SiWordpress,
+  },
+  {
+    title: "Illustrator",
+    iconType: TbBrandAdobeIllustrator,
+  },
+  {
+    title: "Photoshop",
+    iconType: TbBrandAdobePhotoshop,
+  },
+  {
+    title: "Blender",
+    iconType: SiBlender,
   },
 ];
 
@@ -286,7 +336,7 @@ export const AboutSection = () => {
                   transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
                 >
                   <ToolBoxItems
-                    items={toolboxItems}
+                    items={toolboxItemsLeft}
                     itemsWrapperClassName="animate-move-left [animation-duration:30s]"
                   />
                 </motion.div>
@@ -298,9 +348,9 @@ export const AboutSection = () => {
                   transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
                 >
                   <ToolBoxItems
-                    items={toolboxItems}
+                    items={toolboxItemsRight}
                     className="mt-6"
-                    itemsWrapperClassName="animate-move-right [animation-duration:15s]"
+                    itemsWrapperClassName="animate-move-right [animation-duration:25s]"
                   />
                 </motion.div>
               </Card>

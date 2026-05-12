@@ -5,7 +5,7 @@ import aahhmFeedback from "@/assets/images/aahhm.png";
 import sbFeedback from "@/assets/images/sb.jpg";
 import crtFeedback from "@/assets/images/crt.png";
 import eramFeedback from "@/assets/images/eram.png";
-import chahdFeedback from "@/assets/images/Chahd.png";
+import chahdFeedback from "@/assets/images/chahd.png";
 
 import restauApp from "@/assets/images/projects/restauapp.png";
 import bahjat from "@/assets/images/projects/bahjat.png";

@@ -383,8 +383,6 @@ export const HeroSection = () => {
           <motion.button
             variants={fadeUp}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            whileHover={{ y: -3, scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl"
           >
             <span className="font-semibold">Explore My Work</span>
@@ -394,8 +392,6 @@ export const HeroSection = () => {
           <motion.button
             variants={fadeUp}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            whileHover={{ y: -3, scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl"
           >
             <span>👋</span>

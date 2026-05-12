@@ -126,13 +126,6 @@ export const ProjectsSection = () => {
                             href={project.liveLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            whileHover={{
-                              y: -3,
-                              scale: 1.02,
-                            }}
-                            whileTap={{
-                              scale: 0.97,
-                            }}
                             className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2"
                           >
                             <span>Live Site</span>
@@ -145,13 +138,6 @@ export const ProjectsSection = () => {
                             href={project.githubLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            whileHover={{
-                              y: -3,
-                              scale: 1.02,
-                            }}
-                            whileTap={{
-                              scale: 0.97,
-                            }}
                             className="bg-gray-950 text-white h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 border border-white/15"
                           >
                             <span>GitHub</span>

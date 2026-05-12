@@ -14,4 +14,9 @@
   .container {
     @apply lg:max-w-5xl;
   }
+  @layer base {
+    html {
+      @apply scroll-smooth;
+    }
+  }
 }

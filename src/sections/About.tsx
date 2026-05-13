@@ -138,18 +138,7 @@ const hobbies = [
     left: "70%",
     top: "48%",
   },
-  {
-    title: "UI Design",
-    emoji: "🧩",
-    left: "25%",
-    top: "8%",
-  },
-  {
-    title: "Coding",
-    emoji: "💻",
-    left: "24%",
-    top: "66%",
-  },
+
   {
     title: "Travel",
     emoji: "✈️",
@@ -174,12 +163,7 @@ const hobbies = [
     left: "76%",
     top: "8%",
   },
-  {
-    title: "Learning",
-    emoji: "📚",
-    left: "30%",
-    top: "43%",
-  },
+
   {
     title: "Illustration",
     emoji: "✏️",
@@ -192,12 +176,7 @@ const hobbies = [
     left: "82%",
     top: "60%",
   },
-  {
-    title: "Coffee",
-    emoji: "☕",
-    left: "18%",
-    top: "84%",
-  },
+
   {
     title: "Cars",
     emoji: "🏎️",
@@ -221,24 +200,6 @@ const hobbies = [
     emoji: "⚡",
     left: "14%",
     top: "58%",
-  },
-  {
-    title: "Content Creation",
-    emoji: "🎬",
-    left: "58%",
-    top: "78%",
-  },
-  {
-    title: "Problem Solving",
-    emoji: "🧠",
-    left: "32%",
-    top: "56%",
-  },
-  {
-    title: "Creative Coding",
-    emoji: "🪄",
-    left: "64%",
-    top: "12%",
   },
 ];
 

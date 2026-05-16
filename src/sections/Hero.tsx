@@ -377,8 +377,9 @@ export const HeroSection = () => {
           transition={{ staggerChildren: 0.12, delayChildren: 0.7 }}
           className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4"
         >
-          <motion.button
+          <motion.a
             variants={fadeUp}
+            href="#projects"
             transition={{ duration: 0.65, ease: "easeOut" }}
             className="group relative isolate inline-flex h-12 items-center gap-2 overflow-hidden rounded-xl border border-white/15 px-6 transition-all duration-300 hover:border-[#49b79e]/70 hover:shadow-lg hover:shadow-[#49b79e]/20"
           >
@@ -389,10 +390,11 @@ export const HeroSection = () => {
             </span>
 
             <ArrowDown className="size-4 text-white transition-transform duration-300 group-hover:translate-y-0.5" />
-          </motion.button>
+          </motion.a>
 
-          <motion.button
+          <motion.a
             variants={fadeUp}
+            href="#contact"
             transition={{ duration: 0.65, ease: "easeOut" }}
             className="group relative isolate inline-flex h-12 items-center gap-2 overflow-hidden rounded-xl border border-white bg-white px-6 text-gray-900 transition-all duration-300 hover:border-[#804DEE]/70 hover:shadow-lg hover:shadow-[#804DEE]/20"
           >
@@ -405,7 +407,7 @@ export const HeroSection = () => {
             <span className="relative z-10 font-semibold transition-colors duration-300 group-hover:text-white">
               Let&apos;s Connect
             </span>
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>

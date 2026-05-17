@@ -29,6 +29,392 @@ const fadeIn = {
   },
 };
 
+type OrbitItem = {
+  size: number;
+  rotation: number;
+  type: "star" | "sparkle" | "dot";
+  className: string;
+  shouldOrbit?: boolean;
+  orbitDuration?: string;
+  shoudlSpin?: boolean;
+  spinDuration?: string;
+};
+
+const orbitItems: OrbitItem[] = [
+  {
+    size: 260,
+    rotation: -115,
+    type: "sparkle",
+    className: "size-3 text-[#49b79e]/20",
+    shouldOrbit: true,
+    orbitDuration: "22s",
+    shoudlSpin: true,
+    spinDuration: "3s",
+  },
+  {
+    size: 300,
+    rotation: 42,
+    type: "sparkle",
+    className: "size-4 text-[#49b79e]/25",
+    shouldOrbit: true,
+    orbitDuration: "24s",
+    shoudlSpin: true,
+    spinDuration: "3s",
+  },
+  {
+    size: 325,
+    rotation: 95,
+    type: "star",
+    className: "size-4 text-[#804DEE]/35",
+    shouldOrbit: true,
+    orbitDuration: "25s",
+    shoudlSpin: true,
+    spinDuration: "4s",
+  },
+  {
+    size: 340,
+    rotation: -92,
+    type: "sparkle",
+    className: "size-5 text-[#804DEE]/30",
+    shouldOrbit: true,
+    orbitDuration: "26s",
+    shoudlSpin: true,
+    spinDuration: "4s",
+  },
+  {
+    size: 360,
+    rotation: 12,
+    type: "dot",
+    className: "size-1.5 bg-[#49b79e]/30",
+    shouldOrbit: true,
+    orbitDuration: "27s",
+  },
+  {
+    size: 380,
+    rotation: 132,
+    type: "dot",
+    className: "size-1.5 bg-[#49b79e]/30",
+    shouldOrbit: true,
+    orbitDuration: "28s",
+  },
+  {
+    size: 410,
+    rotation: -58,
+    type: "star",
+    className: "size-5 text-[#49b79e]/60",
+    shouldOrbit: true,
+    orbitDuration: "29s",
+    shoudlSpin: true,
+    spinDuration: "4s",
+  },
+  {
+    size: 430,
+    rotation: -14,
+    type: "sparkle",
+    className: "size-8 text-[#49b79e]/20",
+    shouldOrbit: true,
+    orbitDuration: "30s",
+    shoudlSpin: true,
+    spinDuration: "3s",
+  },
+  {
+    size: 440,
+    rotation: 79,
+    type: "sparkle",
+    className: "size-5 text-[#49b79e]/20",
+    shouldOrbit: true,
+    orbitDuration: "32s",
+    shoudlSpin: true,
+    spinDuration: "3s",
+  },
+  {
+    size: 455,
+    rotation: 112,
+    type: "star",
+    className: "size-4 text-[#49b79e]/40",
+    shouldOrbit: true,
+    orbitDuration: "32s",
+    shoudlSpin: true,
+    spinDuration: "5s",
+  },
+  {
+    size: 470,
+    rotation: 155,
+    type: "sparkle",
+    className: "size-7 text-[#804DEE]/25",
+    shouldOrbit: true,
+    orbitDuration: "33s",
+    shoudlSpin: true,
+    spinDuration: "5s",
+  },
+  {
+    size: 490,
+    rotation: -128,
+    type: "dot",
+    className: "size-2 bg-[#804DEE]/25",
+    shouldOrbit: true,
+    orbitDuration: "35s",
+  },
+  {
+    size: 520,
+    rotation: -41,
+    type: "dot",
+    className: "size-2 bg-[#49b79e]/20",
+    shouldOrbit: true,
+    orbitDuration: "34s",
+  },
+  {
+    size: 530,
+    rotation: 178,
+    type: "sparkle",
+    className: "size-10 text-[#49b79e]/20",
+    shouldOrbit: true,
+    orbitDuration: "36s",
+    shoudlSpin: true,
+    spinDuration: "3s",
+  },
+  {
+    size: 550,
+    rotation: 20,
+    type: "star",
+    className: "size-12 text-[#49b79e]",
+    shouldOrbit: true,
+    orbitDuration: "38s",
+    shoudlSpin: true,
+    spinDuration: "6s",
+  },
+  {
+    size: 575,
+    rotation: -165,
+    type: "sparkle",
+    className: "size-6 text-[#49b79e]/30",
+    shouldOrbit: true,
+    orbitDuration: "39s",
+    shoudlSpin: true,
+    spinDuration: "5s",
+  },
+  {
+    size: 590,
+    rotation: 98,
+    type: "star",
+    className: "size-8 text-[#49b79e]",
+    shouldOrbit: true,
+    orbitDuration: "40s",
+    shoudlSpin: true,
+    spinDuration: "6s",
+  },
+  {
+    size: 610,
+    rotation: -18,
+    type: "sparkle",
+    className: "size-4 text-[#804DEE]/30",
+    shouldOrbit: true,
+    orbitDuration: "40s",
+    shoudlSpin: true,
+    spinDuration: "4s",
+  },
+  {
+    size: 620,
+    rotation: 64,
+    type: "star",
+    className: "size-6 text-[#804DEE]/70",
+    shouldOrbit: true,
+    orbitDuration: "41s",
+    shoudlSpin: true,
+    spinDuration: "7s",
+  },
+  {
+    size: 650,
+    rotation: -5,
+    type: "dot",
+    className: "size-2 bg-[#49b79e]/20",
+    shouldOrbit: true,
+    orbitDuration: "42s",
+  },
+  {
+    size: 665,
+    rotation: 38,
+    type: "star",
+    className: "size-5 text-[#49b79e]/45",
+    shouldOrbit: true,
+    orbitDuration: "43s",
+    shoudlSpin: true,
+    spinDuration: "5s",
+  },
+  {
+    size: 680,
+    rotation: -104,
+    type: "sparkle",
+    className: "size-9 text-[#804DEE]/25",
+    shouldOrbit: true,
+    orbitDuration: "43s",
+    shoudlSpin: true,
+    spinDuration: "4s",
+  },
+  {
+    size: 710,
+    rotation: 144,
+    type: "sparkle",
+    className: "size-14 text-[#49b79e]/20",
+    shouldOrbit: true,
+    orbitDuration: "44s",
+    shoudlSpin: true,
+    spinDuration: "3s",
+  },
+  {
+    size: 720,
+    rotation: 85,
+    type: "dot",
+    className: "size-3 bg-[#49b79e]/20",
+    shouldOrbit: true,
+    orbitDuration: "46s",
+  },
+  {
+    size: 740,
+    rotation: -155,
+    type: "sparkle",
+    className: "size-5 text-[#804DEE]/25",
+    shouldOrbit: true,
+    orbitDuration: "46s",
+    shoudlSpin: true,
+    spinDuration: "5s",
+  },
+  {
+    size: 760,
+    rotation: -36,
+    type: "star",
+    className: "size-10 text-[#49b79e]/80",
+    shouldOrbit: true,
+    orbitDuration: "47s",
+    shoudlSpin: true,
+    spinDuration: "5s",
+  },
+  {
+    size: 790,
+    rotation: 8,
+    type: "dot",
+    className: "size-2 bg-[#804DEE]/25",
+    shouldOrbit: true,
+    orbitDuration: "48s",
+  },
+  {
+    size: 800,
+    rotation: -72,
+    type: "star",
+    className: "size-28 text-[#49b79e]",
+    shouldOrbit: true,
+    orbitDuration: "48s",
+    shoudlSpin: true,
+    spinDuration: "6s",
+  },
+  {
+    size: 820,
+    rotation: 152,
+    type: "sparkle",
+    className: "size-6 text-[#49b79e]/25",
+    shouldOrbit: true,
+    orbitDuration: "49s",
+    shoudlSpin: true,
+    spinDuration: "5s",
+  },
+  {
+    size: 840,
+    rotation: 118,
+    type: "dot",
+    className: "size-2.5 bg-[#804DEE]/30",
+    shouldOrbit: true,
+    orbitDuration: "50s",
+  },
+  {
+    size: 880,
+    rotation: -142,
+    type: "sparkle",
+    className: "size-11 text-[#49b79e]/25",
+    shouldOrbit: true,
+    orbitDuration: "52s",
+    shoudlSpin: true,
+    spinDuration: "6s",
+  },
+  {
+    size: 910,
+    rotation: 74,
+    type: "star",
+    className: "size-7 text-[#49b79e]/40",
+    shouldOrbit: true,
+    orbitDuration: "53s",
+    shoudlSpin: true,
+    spinDuration: "6s",
+  },
+  {
+    size: 930,
+    rotation: 34,
+    type: "star",
+    className: "size-16 text-[#804DEE]/50",
+    shouldOrbit: true,
+    orbitDuration: "54s",
+    shoudlSpin: true,
+    spinDuration: "8s",
+  },
+  {
+    size: 960,
+    rotation: -22,
+    type: "sparkle",
+    className: "size-8 text-[#49b79e]/20",
+    shouldOrbit: true,
+    orbitDuration: "55s",
+    shoudlSpin: true,
+    spinDuration: "7s",
+  },
+  {
+    size: 980,
+    rotation: 172,
+    type: "dot",
+    className: "size-3 bg-[#49b79e]/25",
+    shouldOrbit: true,
+    orbitDuration: "56s",
+  },
+  {
+    size: 1040,
+    rotation: -88,
+    type: "sparkle",
+    className: "size-12 text-[#804DEE]/20",
+    shouldOrbit: true,
+    orbitDuration: "58s",
+    shoudlSpin: true,
+    spinDuration: "7s",
+  },
+  {
+    size: 1080,
+    rotation: 138,
+    type: "star",
+    className: "size-9 text-[#49b79e]/35",
+    shouldOrbit: true,
+    orbitDuration: "60s",
+    shoudlSpin: true,
+    spinDuration: "8s",
+  },
+  {
+    size: 1120,
+    rotation: 56,
+    type: "star",
+    className: "size-20 text-[#49b79e]/50",
+    shouldOrbit: true,
+    orbitDuration: "62s",
+    shoudlSpin: true,
+    spinDuration: "9s",
+  },
+  {
+    size: 1180,
+    rotation: -128,
+    type: "sparkle",
+    className: "size-10 text-[#804DEE]/20",
+    shouldOrbit: true,
+    orbitDuration: "64s",
+    shoudlSpin: true,
+    spinDuration: "9s",
+  },
+];
+
 export const HeroSection = () => {
   return (
     <section className="py-32 md:py-48 lg:py-60 relative isolate z-0 overflow-x-clip">
@@ -43,7 +429,7 @@ export const HeroSection = () => {
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.4, ease: "easeOut", delay: 0.15 }}
-        className="absolute -bottom-62 -right-32 size-[460px] md:size-[650px] lg:size-[820px] rounded-full bg-[#804DEE]/10 blur-3xl -z-20"
+        className="absolute -bottom-64 -right-32 size-[460px] md:size-[650px] lg:size-[820px] rounded-full bg-[#804DEE]/10 blur-3xl -z-20"
       />
 
       <motion.div
@@ -58,260 +444,32 @@ export const HeroSection = () => {
           style={{ backgroundImage: `url(${grainImage.src})` }}
         />
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
-        >
-          <div className="size-[620px] hero-ring"></div>
-          <div className="size-[820px] hero-ring"></div>
-          <div className="size-[1020px] hero-ring"></div>
-          <div className="size-[1220px] hero-ring"></div>
-        </motion.div>
+        <div>
+          <div className="size-[620px] hero-ring" />
+          <div className="size-[820px] hero-ring" />
+          <div className="size-[1020px] hero-ring" />
+          <div className="size-[1220px] hero-ring" />
+        </div>
 
-        <HeroOrbit
-          size={300}
-          rotation={42}
-          shouldOrbit
-          orbitDuration="24s"
-          shoudlSpin
-          spinDuration="3s"
-        >
-          <SparkleIcon className="size-4 text-[#49b79e]/25" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={340}
-          rotation={-92}
-          shouldOrbit
-          orbitDuration="26s"
-          shoudlSpin
-          spinDuration="4s"
-        >
-          <SparkleIcon className="size-5 text-[#804DEE]/30" />
-        </HeroOrbit>
-
-        <HeroOrbit size={380} rotation={132} shouldOrbit orbitDuration="28s">
-          <div className="size-1.5 rounded-full bg-[#49b79e]/30" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={410}
-          rotation={-58}
-          shouldOrbit
-          orbitDuration="29s"
-          shoudlSpin
-          spinDuration="4s"
-        >
-          <StarIcon className="size-5 text-[#49b79e]/60" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={430}
-          rotation={-14}
-          shouldOrbit
-          orbitDuration="30s"
-          shoudlSpin
-          spinDuration="3s"
-        >
-          <SparkleIcon className="size-8 text-[#49b79e]/20" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={440}
-          rotation={79}
-          shouldOrbit
-          orbitDuration="32s"
-          shoudlSpin
-          spinDuration="3s"
-        >
-          <SparkleIcon className="size-5 text-[#49b79e]/20" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={470}
-          rotation={155}
-          shouldOrbit
-          orbitDuration="33s"
-          shoudlSpin
-          spinDuration="5s"
-        >
-          <SparkleIcon className="size-7 text-[#804DEE]/25" />
-        </HeroOrbit>
-
-        <HeroOrbit size={490} rotation={-128} shouldOrbit orbitDuration="35s">
-          <div className="size-2 rounded-full bg-[#804DEE]/25" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={520}
-          rotation={-41}
-          shouldOrbit
-          orbitDuration="34s"
-          shoudlSpin
-          spinDuration="3s"
-        >
-          <div className="size-2 rounded-full bg-[#49b79e]/20" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={530}
-          rotation={178}
-          shouldOrbit
-          orbitDuration="36s"
-          shoudlSpin
-          spinDuration="3s"
-        >
-          <SparkleIcon className="size-10 text-[#49b79e]/20" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={550}
-          rotation={20}
-          shouldOrbit
-          orbitDuration="38s"
-          shoudlSpin
-          spinDuration="6s"
-        >
-          <StarIcon className="size-12 text-[#49b79e]" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={575}
-          rotation={-165}
-          shouldOrbit
-          orbitDuration="39s"
-          shoudlSpin
-          spinDuration="5s"
-        >
-          <SparkleIcon className="size-6 text-[#49b79e]/30" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={590}
-          rotation={98}
-          shouldOrbit
-          orbitDuration="40s"
-          shoudlSpin
-          spinDuration="6s"
-        >
-          <StarIcon className="size-8 text-[#49b79e]" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={620}
-          rotation={64}
-          shouldOrbit
-          orbitDuration="41s"
-          shoudlSpin
-          spinDuration="7s"
-        >
-          <StarIcon className="size-6 text-[#804DEE]/70" />
-        </HeroOrbit>
-
-        <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
-          <div className="size-2 rounded-full bg-[#49b79e]/20" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={680}
-          rotation={-104}
-          shouldOrbit
-          orbitDuration="43s"
-          shoudlSpin
-          spinDuration="4s"
-        >
-          <SparkleIcon className="size-9 text-[#804DEE]/25" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={710}
-          rotation={144}
-          shouldOrbit
-          orbitDuration="44s"
-          shoudlSpin
-          spinDuration="3s"
-        >
-          <SparkleIcon className="size-14 text-[#49b79e]/20" />
-        </HeroOrbit>
-
-        <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
-          <div className="size-3 rounded-full bg-[#49b79e]/20" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={760}
-          rotation={-36}
-          shouldOrbit
-          orbitDuration="47s"
-          shoudlSpin
-          spinDuration="5s"
-        >
-          <StarIcon className="size-10 text-[#49b79e]/80" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={800}
-          rotation={-72}
-          shouldOrbit
-          orbitDuration="48s"
-          shoudlSpin
-          spinDuration="6s"
-        >
-          <StarIcon className="size-28 text-[#49b79e]" />
-        </HeroOrbit>
-
-        <HeroOrbit size={840} rotation={118} shouldOrbit orbitDuration="50s">
-          <div className="size-2.5 rounded-full bg-[#804DEE]/30" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={880}
-          rotation={-142}
-          shouldOrbit
-          orbitDuration="52s"
-          shoudlSpin
-          spinDuration="6s"
-        >
-          <SparkleIcon className="size-11 text-[#49b79e]/25" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={930}
-          rotation={34}
-          shouldOrbit
-          orbitDuration="54s"
-          shoudlSpin
-          spinDuration="8s"
-        >
-          <StarIcon className="size-16 text-[#804DEE]/50" />
-        </HeroOrbit>
-
-        <HeroOrbit size={980} rotation={172} shouldOrbit orbitDuration="56s">
-          <div className="size-3 rounded-full bg-[#49b79e]/25" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={1040}
-          rotation={-88}
-          shouldOrbit
-          orbitDuration="58s"
-          shoudlSpin
-          spinDuration="7s"
-        >
-          <SparkleIcon className="size-12 text-[#804DEE]/20" />
-        </HeroOrbit>
-
-        <HeroOrbit
-          size={1120}
-          rotation={56}
-          shouldOrbit
-          orbitDuration="62s"
-          shoudlSpin
-          spinDuration="9s"
-        >
-          <StarIcon className="size-20 text-[#49b79e]/50" />
-        </HeroOrbit>
+        {orbitItems.map((item) => (
+          <HeroOrbit
+            key={`${item.size}-${item.rotation}`}
+            size={item.size}
+            rotation={item.rotation}
+            shouldOrbit={item.shouldOrbit}
+            orbitDuration={item.orbitDuration}
+            shoudlSpin={item.shoudlSpin}
+            spinDuration={item.spinDuration}
+          >
+            {item.type === "star" ? (
+              <StarIcon className={item.className} />
+            ) : item.type === "sparkle" ? (
+              <SparkleIcon className={item.className} />
+            ) : (
+              <div className={`rounded-full ${item.className}`} />
+            )}
+          </HeroOrbit>
+        ))}
       </motion.div>
 
       <div className="container relative z-10">
@@ -339,7 +497,7 @@ export const HeroSection = () => {
             className="bg-[#050816] border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg"
           >
             <div className="bg-green-500 size-2.5 rounded-full relative">
-              <div className="bg-green-500 absolute inset-0 rounded-full animate-ping-large"></div>
+              <div className="bg-green-500 absolute inset-0 rounded-full animate-ping-large" />
             </div>
 
             <div className="text-sm font-semibold">

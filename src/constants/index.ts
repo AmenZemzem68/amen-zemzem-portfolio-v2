@@ -10,7 +10,7 @@ import chahdFeedback from "@/assets/images/chahd.png";
 import labdis from "@/assets/images/projects/labdis.png";
 import marjooram from "@/assets/images/projects/marjooram.png";
 import coahcoussema from "@/assets/images/projects/coachoussema.png";
-import restauApp from "@/assets/images/projects/restauapp.png";
+import restauApp from "@/assets/images/projects/restauapp-02.png";
 import bahjat from "@/assets/images/projects/bahjat.png";
 import fsa from "@/assets/images/projects/fsa.png";
 import eramtecno from "@/assets/images/projects/eramtecno.png";
@@ -240,18 +240,18 @@ export const mProjects: Project[] = [
   {
     name: "Marjooram Website",
     description:
-      "A website showcases the profile of Future Skills Academy, a training institute focused on future-ready skills, highlighting their programs.",
+      "An e-commerce website for a Qatari FMCG retailer offering groceries, beverages, personal care, household essentials, and pet supplies through a convenient online shopping experience.",
     tags: [
       {
         name: "wordpress",
         color: "#AC2B61",
       },
       {
-        name: "soft skills",
+        name: "wooommerce",
         color: "#1D9275",
       },
       {
-        name: "portfolio",
+        name: "elementor",
         color: "#43A7EC",
       },
     ],
@@ -259,16 +259,16 @@ export const mProjects: Project[] = [
     liveLink: "https://Marjooram.com/",
   },
   {
-    name: "Coach Oussema Portfolio",
+    name: "Oussama Haddaji Portfolio",
     description:
-      "A website showcases the profile of Future Skills Academy, a training institute focused on future-ready skills, highlighting their programs.",
+      "A professional portfolio website for football coach Oussama Haddaji, showcasing his experience, qualifications, youth development work, physical preparation, and coaching approach.",
     tags: [
       {
-        name: "wordpress",
+        name: "reactjs",
         color: "#AC2B61",
       },
       {
-        name: "soft skills",
+        name: "tailwindcss",
         color: "#1D9275",
       },
       {
@@ -280,20 +280,20 @@ export const mProjects: Project[] = [
     liveLink: "https://osamacoach.site/",
   },
   {
-    name: "Labdis Website",
+    name: "LABDIS Website",
     description:
-      "A website showcases the profile of Future Skills Academy, a training institute focused on future-ready skills, highlighting their programs.",
+      "A corporate website for a French wholesale and import-export company supplying authentic international food products to professionals, wholesalers, distributors, and retailers.",
     tags: [
       {
         name: "wordpress",
         color: "#AC2B61",
       },
       {
-        name: "soft skills",
+        name: "elementor",
         color: "#1D9275",
       },
       {
-        name: "portfolio",
+        name: "corporate",
         color: "#43A7EC",
       },
     ],
@@ -310,11 +310,11 @@ export const mProjects: Project[] = [
         color: "#AC2B61",
       },
       {
-        name: "soft skills",
+        name: "elementor",
         color: "#1D9275",
       },
       {
-        name: "portfolio",
+        name: "academy",
         color: "#43A7EC",
       },
     ],
@@ -331,11 +331,11 @@ export const mProjects: Project[] = [
         color: "#AC2B61",
       },
       {
-        name: "air conditioning",
+        name: "elementor",
         color: "#1D9275",
       },
       {
-        name: "portfolio",
+        name: "air conditioning",
         color: "#43A7EC",
       },
     ],
@@ -352,11 +352,11 @@ export const mProjects: Project[] = [
         color: "#AC2B61",
       },
       {
-        name: "construction",
+        name: "elementor",
         color: "#1D9275",
       },
       {
-        name: "portfolio",
+        name: "construction",
         color: "#43A7EC",
       },
     ],
@@ -370,7 +370,7 @@ export const mProjects: Project[] = [
       "A restaurant landing page that features an elegant design for browsing menus & booking tables. It incorporates 3D models to enhance the user experience.",
     tags: [
       {
-        name: "react",
+        name: "reactjs",
         color: "#AC2B61",
       },
       {
@@ -378,7 +378,7 @@ export const mProjects: Project[] = [
         color: "#1D9275",
       },
       {
-        name: "Adobe Illustrator",
+        name: "tailwindcss",
         color: "#43A7EC",
       },
     ],
@@ -421,7 +421,7 @@ export const mProjects: Project[] = [
         color: "#1D9275",
       },
       {
-        name: "porto",
+        name: "elementor",
         color: "#43A7EC",
       },
     ],

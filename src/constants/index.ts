@@ -7,6 +7,9 @@ import crtFeedback from "@/assets/images/crt.png";
 import eramFeedback from "@/assets/images/eram.png";
 import chahdFeedback from "@/assets/images/chahd.png";
 
+import labdis from "@/assets/images/projects/labdis.png";
+import marjooram from "@/assets/images/projects/marjooram.png";
+import coahcoussema from "@/assets/images/projects/coachoussema.png";
 import restauApp from "@/assets/images/projects/restauapp.png";
 import bahjat from "@/assets/images/projects/bahjat.png";
 import fsa from "@/assets/images/projects/fsa.png";
@@ -235,6 +238,69 @@ export const feedbacks: Feedback[] = [
 
 export const mProjects: Project[] = [
   {
+    name: "Marjooram Website",
+    description:
+      "A website showcases the profile of Future Skills Academy, a training institute focused on future-ready skills, highlighting their programs.",
+    tags: [
+      {
+        name: "wordpress",
+        color: "#AC2B61",
+      },
+      {
+        name: "soft skills",
+        color: "#1D9275",
+      },
+      {
+        name: "portfolio",
+        color: "#43A7EC",
+      },
+    ],
+    image: marjooram,
+    liveLink: "https://Marjooram.com/",
+  },
+  {
+    name: "Coach Oussema Portfolio",
+    description:
+      "A website showcases the profile of Future Skills Academy, a training institute focused on future-ready skills, highlighting their programs.",
+    tags: [
+      {
+        name: "wordpress",
+        color: "#AC2B61",
+      },
+      {
+        name: "soft skills",
+        color: "#1D9275",
+      },
+      {
+        name: "portfolio",
+        color: "#43A7EC",
+      },
+    ],
+    image: coahcoussema,
+    liveLink: "https://osamacoach.site/",
+  },
+  {
+    name: "Labdis Website",
+    description:
+      "A website showcases the profile of Future Skills Academy, a training institute focused on future-ready skills, highlighting their programs.",
+    tags: [
+      {
+        name: "wordpress",
+        color: "#AC2B61",
+      },
+      {
+        name: "soft skills",
+        color: "#1D9275",
+      },
+      {
+        name: "portfolio",
+        color: "#43A7EC",
+      },
+    ],
+    image: labdis,
+    liveLink: "https://labdis.fr/",
+  },
+  {
     name: "Future Skills Academy Website",
     description:
       "A website showcases the profile of Future Skills Academy, a training institute focused on future-ready skills, highlighting their programs.",
@@ -253,7 +319,7 @@ export const mProjects: Project[] = [
       },
     ],
     image: fsa,
-    liveLink: "https://goldenrod-goshawk-484764.hostingersite.com/",
+    liveLink: "https://wordpress-724434-5912148.cloudwaysapps.com/",
   },
   {
     name: "AirTech Oman Website",

@@ -46,13 +46,13 @@ export const ProjectsSection = () => {
           />
         </motion.div>
 
-        <div className="mt-10 md:mt-20 flex flex-col gap-20">
+        <div className="mt-10 md:mt-20 flex flex-col gap-10">
           {mProjects.map((project, projectIndex) => (
             <div
               key={project.name}
               className="sticky"
               style={{
-                top: `calc(64px + ${projectIndex * 15}px)`,
+                top: `calc(80px + ${projectIndex * 10}px)`,
               }}
             >
               <Card className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 overflow-hidden">
@@ -170,7 +170,7 @@ export const ProjectsSection = () => {
                       <Image
                         src={project.image}
                         alt={project.name}
-                        className="mt-8 -mb-4 rounded-t-2xl md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                        className="mt-10 -mb-4 rounded-t-2xl md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
                       />
                     </motion.div>
                   </div>

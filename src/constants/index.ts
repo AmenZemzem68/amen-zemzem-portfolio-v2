@@ -7,16 +7,16 @@ import crtFeedback from "@/assets/images/crt.png";
 import eramFeedback from "@/assets/images/eram.png";
 import chahdFeedback from "@/assets/images/chahd.png";
 
-import labdis from "@/assets/images/projects/labdis.png";
-import marjooram from "@/assets/images/projects/marjooram.png";
-import coahcoussema from "@/assets/images/projects/coachoussema.png";
-import restauApp from "@/assets/images/projects/restauapp-02.png";
-import bahjat from "@/assets/images/projects/bahjat.png";
-import fsa from "@/assets/images/projects/fsa.png";
-import eramtecno from "@/assets/images/projects/eramtecno.png";
-import royal from "@/assets/images/projects/royal-flame.png";
-import airtech from "@/assets/images/projects/airtech.png";
-import coding from "@/assets/images/projects/codingart.png";
+import labdis from "@/assets/images/projects/labdis-1.png";
+import marjooram from "@/assets/images/projects/marjooram-1.png";
+import coahcoussema from "@/assets/images/projects/coachoussema-1.png";
+import restauApp from "@/assets/images/projects/restauapp-1.png";
+import bahjat from "@/assets/images/projects/bahjat-1.png";
+import fsa from "@/assets/images/projects/fsa-1.png";
+import eramtecno from "@/assets/images/projects/eramtecno-1.png";
+import royal from "@/assets/images/projects/royal-flame-1.png";
+import airtech from "@/assets/images/projects/airtech-1.png";
+import coding from "@/assets/images/projects/codingart-1.png";
 
 import adidas from "@/assets/images/designs/Adidas.jpg";
 import airJordan1 from "@/assets/images/designs/Air Jordan 1.jpg";
